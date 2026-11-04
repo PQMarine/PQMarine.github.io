@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Underworld Revisited</title>
+  <meta name="description" content="An open-source reimplementation of Ultima Underworld: The Stygian Abyss (1992) in Unity, built on the original game data. Free, for Windows and Linux.">
+  <meta property="og:title" content="Underworld Revisited">
+  <meta property="og:description" content="Ultima Underworld (1992), reimplemented in Unity. Play it as it was, or with a modern face.">
+  <meta property="og:image" content="img/ur14.jpg">
+  <meta name="theme-color" content="#0b0907">
+  <link rel="icon" type="image/svg+xml" href="img/ur-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="embers" aria-hidden="true"></canvas>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top"><img src="img/ur-icon.svg" alt="" width="32" height="32"><span>Underworld Revisited</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#compare">Look</a>
+    <a href="#features">Features</a>
+    <a href="#interfaces">Interfaces</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#journey">Journey</a>
+    <a href="#start">Play</a>
+  </nav>
+  <a class="btn btn-ghost btn-sm nav-gh" href="https://github.com/PQMarine/UnderworldRevisited">
+    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+    GitHub
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <video id="heroVideo" src="video/hero.mp4" poster="video/hero.jpg" autoplay muted loop playsinline preload="auto"></video>
+    </div>
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="eyebrow reveal">Open source &middot; Free &middot; Windows &amp; Linux</p>
+      <h1 class="hero-title reveal">
+        <span class="line">Underworld</span>
+        <span class="line ember-text">Revisited</span>
+      </h1>
+      <p class="hero-sub reveal">
+        Ultima Underworld: The Stygian Abyss (1992), reimplemented in Unity and read straight
+        from your own copy. Play it from character creation to the end, exactly as it was,
+        or with a modern face.
+      </p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="https://github.com/PQMarine/UnderworldRevisited/releases/latest">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
+          Download <span class="version" data-version>0.16.0</span>
+        </a>
+        <a class="btn btn-ghost" href="#compare">Take a look</a>
+      </div>
+      <p class="hero-note reveal">Needs <strong>Ultima Underworld 1+2 from GOG.com</strong>. No game data included.</p>
+    </div>
+    <a class="scroll-cue" href="#stats" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" id="stats">
+    <div class="stat reveal"><b data-count="9">0</b><span>dungeon levels, played through to the end</span></div>
+    <div class="stat reveal"><b data-count="3">0</b><span>render modes, from palette-true to URP</span></div>
+    <div class="stat reveal"><b data-count="4">0</b><span>ways to hear the music: AdLib, GM, MT-32, recordings</span></div>
+    <div class="stat reveal"><b data-count="2">0</b><span>control schemes, swapped with Shift+F2</span></div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="section" id="compare">
+    <div class="section-head reveal">
+      <p class="kicker">Two lights, one dungeon</p>
+      <h2>Palette or Remastered</h2>
+      <p>Drag across the picture. <b>Palette</b> computes light like the original, through its own
+        shade and light tables. <b>Remastered</b> lights the same spot with Unity's URP: relief,
+        glow, shadows and torch light, each switchable on its own.</p>
+    </div>
+    <div class="compare reveal" id="compareBox" style="--pos:50%">
+      <img src="img/ur13.jpg" alt="Remastered mode at the doors of the Abyss" class="compare-img">
+      <div class="compare-top"><img src="img/ur12.jpg" alt="Palette mode at the doors of the Abyss" class="compare-img"></div>
+      <span class="compare-label left">Palette</span>
+      <span class="compare-label right">Remastered</span>
+      <div class="compare-handle" aria-hidden="true"><span></span></div>
+      <input type="range" min="0" max="100" value="50" aria-label="Compare Palette and Remastered" id="compareRange">
+    </div>
+  </section>
+
+  <!-- GRAPHICS LAB -->
+  <section class="section" id="lab">
+    <div class="section-head reveal">
+      <p class="kicker">Try it yourself</p>
+      <h2>The graphics lab</h2>
+      <p>One room on level 2, three render modes, three steps of effects. Pick a combination,
+        and press and hold the picture to see the same mode without effects.</p>
+    </div>
+    <div class="lab reveal">
+      <div class="lab-controls">
+        <div class="seg" role="radiogroup" aria-label="Render mode" data-group="mode">
+          <button role="radio" aria-checked="true" data-value="palette">Palette</button>
+          <button role="radio" aria-checked="false" data-value="colours">Palette colours</button>
+          <button role="radio" aria-checked="false" data-value="remastered">Remastered</button>
+        </div>
+        <div class="seg seg-small" role="radiogroup" aria-label="Effects" data-group="fx">
+          <button role="radio" aria-checked="false" data-value="off">Off</button>
+          <button role="radio" aria-checked="false" data-value="subtle">Subtle</button>
+          <button role="radio" aria-checked="true" data-value="full">Full</button>
+        </div>
+      </div>
+      <div class="lab-stage" id="labStage" aria-live="polite">
+        <img src="img/lab-palette-full.jpg" alt="Palette mode, effects Full" class="on">
+        <span class="lab-badge" id="labBadge">Palette &middot; Full</span>
+        <span class="lab-hint">Hold to compare with Off</span>
+      </div>
+      <p class="lab-text" id="labText"></p>
+    </div>
+
+    <div class="light reveal">
+      <div class="light-copy">
+        <p class="kicker">Remastered</p>
+        <h3>The colour of the light</h3>
+        <p>Remastered lights the dungeon with URP. Its light burns warm like a torch. Too yellow
+          for your taste? Turn it a little cooler, or all the way to neutral white.</p>
+        <div class="swatches" role="radiogroup" aria-label="Light colour">
+          <button role="radio" aria-checked="true" data-img="img/light-warm.jpg" style="--sw:#ffb347"><i></i>Warm</button>
+          <button role="radio" aria-checked="false" data-img="img/light-cooler.jpg" style="--sw:#ffdba8"><i></i>Cooler</button>
+          <button role="radio" aria-checked="false" data-img="img/light-white.jpg" style="--sw:#f4f1ec"><i></i>White</button>
+        </div>
+      </div>
+      <div class="light-stage" id="lightStage">
+        <img src="img/light-warm.jpg" alt="Remastered, warm light" class="on">
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="section-head reveal">
+      <p class="kicker">Built against the original</p>
+      <h2>Everything the Abyss had. And then some.</h2>
+      <p>The rules are read from the original's code and checked step by step against the game.
+        Save games go both ways between Underworld Revisited and the 1992 original.</p>
+    </div>
+
+    <div class="bento">
+      <article class="card card-wide card-img reveal" data-tilt>
+        <img src="img/ur09.jpg" alt="" loading="lazy">
+        <div class="card-body">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v10H8l-4 4z"/></svg></div>
+          <h3>The whole game</h3>
+          <p>Nine levels with their doors, locks, traps and triggers. Combat with the original's tables,
+            magic with runes, creatures with their goals and group alarm, and conversations running the
+            original bytecode, trading included.</p>
+        </div>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg></div>
+        <h3>Saves both ways</h3>
+        <p>Reads and writes the original's <code>SAVE1</code> to <code>SAVE4</code>. Carry a game
+          into DOSBox and back.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></div>
+        <h3>Palette effects</h3>
+        <p>Ambient occlusion, grime, wall depth, glowing lava. Every pixel still a colour of the
+          original's palette.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h3>Music, four ways</h3>
+        <p>AdLib through an OPL2 emulation, General MIDI, a Roland MT-32 emulated by Munt, or
+          recordings you supply.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 12h4M8 10v4"/><circle cx="15" cy="11" r="1"/><circle cx="17" cy="13" r="1"/><path d="M7 6h10a5 5 0 015 5v1a5 5 0 01-9 3h-2a5 5 0 01-9-3v-1a5 5 0 015-5z"/></svg></div>
+        <h3>Gamepad</h3>
+        <p>In both schemes, with a pointer on the stick, glyphs for Xbox, PlayStation, Nintendo and
+          Steam Deck, every button rebindable.</p>
+      </article>
+
+      <article class="card card-tall card-img reveal" data-tilt>
+        <img src="img/ur11.jpg" alt="" loading="lazy">
+        <div class="card-body">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 3h6v6H3zM9 9h6v6H9zM15 15h6v6h-6z"/></svg></div>
+          <h3>Hard pixels, sharp frame</h3>
+          <p>The world at the original's 320x200 resolution or up to 4x, while the interface
+            stays crisp.</p>
+        </div>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/><path d="M3 5h4M3 19h18"/></svg></div>
+        <h3>Original bugs fixed</h3>
+        <p>Optional fixes for bugs of 1992 that could cost you the game. Off, and it plays exactly
+          as it did.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h9M8.5 3v2M6 5c0 4 3 7 6 8M11 5c-1 4-4 7-7 8"/><path d="M13 21l4-10 4 10M14.5 17h5"/></svg></div>
+        <h3>English &amp; German</h3>
+        <p>Switch the interface language at once. The game's own texts can be translated by
+          language files.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div>
+        <h3>Your own rules</h3>
+        <p>An optional <code>rules.json</code> changes combat, magic, creatures, motion and trade.
+          Without it, the original's numbers.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 4h7a2 2 0 012 2v14a2 2 0 00-2-2H3zM21 4h-7a2 2 0 00-2 2v14a2 2 0 012-2h7z"/></svg></div>
+        <h3>Help window</h3>
+        <p>Beside the view: stats with the hidden values, a live map, your notes, spells, mantras
+          and the game's manual.</p>
+      </article>
+
+      <article class="card card-wide reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></div>
+        <h3>Three ways to move</h3>
+        <p><b>Original</b> runs the original's motion code call by call, <b>Smooth</b> computes the
+          same rules frame-rate independent, and <b>Modern</b> is an own character motor that slides
+          along walls and keeps the view where you look, with the original's jumps, ledges and falls.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>Windows &amp; Linux</h3>
+        <p>Windows 10 or newer, and a Linux build in every release since 0.3.0. The package brings
+          its own runtime.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></div>
+        <h3>Cutscenes with speech</h3>
+        <p>The intro, the dreams and the end sequence, played from the original's own cutscene
+          files.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- INTERFACES -->
+  <section class="section" id="interfaces">
+    <div class="section-head reveal">
+      <p class="kicker">Pointer steering or WASD</p>
+      <h2>Pick your interface</h2>
+      <p>One spot in the dungeon, four faces. The game switches between them from its menu while
+        you play: the original's frame at 4:3, the frame widened, its pieces set free, or a modern
+        scheme with free mouse look. A layout editor moves and sizes every part.</p>
+    </div>
+    <div class="tabs reveal" role="tablist" id="ifaceTabs">
+      <button role="tab" aria-selected="true" data-img="img/iface-classic43.jpg" data-cap="Classic 4:3: the original interface as it was in 1992.">Classic 4:3</button>
+      <button role="tab" aria-selected="false" data-img="img/iface-wide.jpg" data-cap="Classic Wide: the original's frame widened to 16:9, the stone grown anew instead of stretched.">Classic Wide</button>
+      <button role="tab" aria-selected="false" data-img="img/iface-modular.jpg" data-cap="Classic Modular: the original's pieces as parts of their own over the whole view.">Classic Modular</button>
+      <button role="tab" aria-selected="false" data-img="img/iface-modern.jpg" data-cap="Modern: the rune panel, a minimap, the bags and the action bar, with free mouse look.">Modern</button>
+      <button role="tab" aria-selected="false" data-img="img/editor-modern.jpg" data-cap="The layout editor: every part framed and named, to be moved and sized; here the minimap's own settings.">Layout editor</button>
+      <span class="tab-glider" aria-hidden="true"></span>
+    </div>
+    <figure class="iface reveal">
+      <div class="iface-frame" id="ifaceFrame"></div>
+      <figcaption id="ifaceCap">Classic 4:3: the original interface as it was in 1992.</figcaption>
+    </figure>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="section-head reveal">
+      <p class="kicker">Down in the Abyss</p>
+      <h2>Gallery</h2>
+    </div>
+    <div class="gallery" id="galleryGrid">
+      <a href="img/world-goblins.jpg" class="reveal" data-cap="Goblins about their business on level 1, the fire flickering in its pit."><img src="img/world-goblins.jpg" alt="Goblins in a room on level 1" loading="lazy"></a>
+      <a href="img/ur07.jpg" class="reveal" data-cap="The modern scheme: the rune panel at the left, the character panel and the bags at the right, the action bar below."><img src="img/ur07.jpg" alt="The modern interface" loading="lazy"></a>
+      <a href="img/ur16.jpg" class="reveal" data-cap="Classic Modular: the rune tablet, the character page and the stats panel, the compass, the power gem and the flasks."><img src="img/ur16.jpg" alt="Classic Modular" loading="lazy"></a>
+      <a href="img/ur15.jpg" class="reveal" data-cap="Classic Wide: the original inventory with the remaining carrying capacity."><img src="img/ur15.jpg" alt="Classic Wide" loading="lazy"></a>
+      <a href="img/ur03.jpg" class="reveal" data-cap="Remastered mode in the classic frame, the help window's live map beside it."><img src="img/ur03.jpg" alt="Remastered mode in the classic frame" loading="lazy"></a>
+      <a href="img/ur14.jpg" class="reveal" data-cap="Palette effects at Full: a campfire lighting the room across the water by the original's light table."><img src="img/ur14.jpg" alt="Palette effects at Full" loading="lazy"></a>
+      <a href="img/ur08.jpg" class="reveal" data-cap="Every rune spell by circle, and a thing's menu in the bags."><img src="img/ur08.jpg" alt="Rune panel and bags" loading="lazy"></a>
+      <a href="img/ur04.jpg" class="reveal" data-cap="A conversation in the original font, and the spells the character knows."><img src="img/ur04.jpg" alt="Conversation in the original font" loading="lazy"></a>
+      <a href="img/ur06.jpg" class="reveal" data-cap="The rune shelf, a shrine, and the player's own notes."><img src="img/ur06.jpg" alt="Rune shelf and shrine" loading="lazy"></a>
+      <a href="img/ur02.jpg" class="reveal" data-cap="Palette mode: light computed like the original."><img src="img/ur02.jpg" alt="Palette mode" loading="lazy"></a>
+      <a href="img/editor-drag.jpg" class="reveal" data-cap="The layout editor on the Classic Modular preset: the minimap dragged into place, guide lines to snap it to its neighbours."><img src="img/editor-drag.jpg" alt="Layout editor, dragging the minimap" loading="lazy"></a>
+      <a href="img/ur05.jpg" class="reveal" data-cap="The same conversation in the modern font, and the character's stats."><img src="img/ur05.jpg" alt="Conversation in the modern font" loading="lazy"></a>
+      <a href="img/ur18.jpg" class="reveal" data-cap="A part's inspector: size, the gem and the flasks, a background in the original's colours."><img src="img/ur18.jpg" alt="Part inspector" loading="lazy"></a>
+      <a href="img/uw2-noclip-castle.jpg" class="reveal" data-cap="Ultima Underworld II, seen from above in the noclip mode: Lord British's castle, its triggers and traps labelled."><img src="img/uw2-noclip-castle.jpg" alt="Lord British's castle from above in noclip mode" loading="lazy"></a>
+    </div>
+  </section>
+
+  <!-- UW2 -->
+  <section class="section uw2">
+    <div class="uw2-inner reveal">
+      <div>
+        <p class="kicker">Preview since 0.13.0</p>
+        <h2>Britannia is next</h2>
+        <p>Ultima Underworld II can already be tried: its menus, character creation and saves,
+          Britannia with its game screen, map and conversations, and its creatures. Not yet the
+          whole of its rules, but growing with every step.</p>
+        <a class="btn btn-ghost" href="https://github.com/PQMarine/UnderworldRevisited/blob/main/Docs/UW2-PLAN.md">Read the UW2 plan</a>
+      </div>
+      <figure class="uw2-show">
+        <div class="uw2-stage" id="uw2Stage">
+          <video src="video/uw2-throne.mp4" poster="video/uw2-throne.jpg" class="on" muted loop playsinline preload="metadata" aria-label="Lord British's throne room in the classic UW2 screen" data-cap="Lord British's throne room, in the original's game screen" data-hold="14000"></video>
+          <img src="img/uw2-throne-modern.jpg" alt="The throne room in the modern scheme" data-cap="The same throne room in the modern scheme" loading="lazy">
+          <img src="img/uw2-nell.jpg" alt="A conversation with Nell" data-cap="A conversation with Nell, the original's portraits" loading="lazy">
+          <span class="uw2-badge" aria-hidden="true">II</span>
+        </div>
+        <figcaption>
+          <span id="uw2Cap">Lord British's throne room, in the original's game screen</span>
+          <span class="uw2-dots" id="uw2Dots" role="tablist" aria-label="UW2 pictures"></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section class="section" id="journey">
+    <div class="section-head reveal">
+      <p class="kicker">Since October 2026</p>
+      <h2>The journey so far</h2>
+      <p>A release every few days. The full list is in the
+        <a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/CHANGELOG.md">changelog</a>.</p>
+    </div>
+    <ol class="timeline">
+      <li class="reveal"><time>0.1.0</time><div><h3>First light</h3><p>The whole game playable, from character creation to the end sequence.</p></div></li>
+      <li class="reveal"><time>0.2.0</time><div><h3>Modern scheme</h3><p>Free mouse look, WASD, bags, an action bar.</p></div></li>
+      <li class="reveal"><time>0.3.0</time><div><h3>Linux</h3><p>The first Linux build, and motion on the original's own code.</p></div></li>
+      <li class="reveal"><time>0.4.0</time><div><h3>Palette effects</h3><p>Depth and light, every pixel in the original's palette.</p></div></li>
+      <li class="reveal"><time>0.5.0</time><div><h3>Gamepad</h3><p>Every window by stick, glyphs for every pad.</p></div></li>
+      <li class="reveal"><time>0.6.0</time><div><h3>Music devices</h3><p>General MIDI and the Roland MT-32.</p></div></li>
+      <li class="reveal"><time>0.7.0</time><div><h3>Interface presets</h3><p>Classic Modular, Classic Wide, the view-angle slider.</p></div></li>
+      <li class="reveal"><time>0.10.0</time><div><h3>Languages</h3><p>German interface and a translation kit.</p></div></li>
+      <li class="reveal"><time>0.12.0</time><div><h3>Modern movement</h3><p>An own character motor, true to the original's jumps and falls.</p></div></li>
+      <li class="reveal"><time>0.13.0</time><div><h3>A first look at UW2</h3><p>Ultima Underworld II as a preview.</p></div></li>
+      <li class="reveal"><time>0.16.0</time><div><h3>Original bugs</h3><p>Optional fixes for bugs of 1992 that could end the game.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- START -->
+  <section class="section" id="start">
+    <div class="section-head reveal">
+      <p class="kicker">Three steps</p>
+      <h2>Descend</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="step-n">1</span><h3>Get the original</h3><p>Install <b>Ultima Underworld 1+2</b> from GOG.com. Only this version is supported.</p></div>
+      <div class="step reveal"><span class="step-n">2</span><h3>Download</h3><p>Grab the latest release for Windows (10+, 64-bit) or Linux (x86-64) and unpack it into a folder of its own.</p></div>
+      <div class="step reveal"><span class="step-n">3</span><h3>Play</h3><p>Start <code>UR.exe</code> or <code>UR.x86_64</code>. It finds your GOG installation, or asks once for the folder with <code>game.gog</code>.</p></div>
+    </div>
+    <div class="start-cta reveal">
+      <a class="btn btn-primary btn-lg" href="https://github.com/PQMarine/UnderworldRevisited/releases/latest">Download <span data-version>0.16.0</span></a>
+      <p class="muted">Nothing is written to your installation. Save games stay compatible with the original.</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section story">
+    <div class="story-inner reveal">
+      <p class="kicker">How this was made</p>
+      <blockquote>
+        "I have been a fan of Ultima Underworld ever since it came out in 1992. In 2012 I came
+        across uw-formats.txt and thought: why not give it a try? In 2026, with the help of Claude,
+        I picked it up again."
+      </blockquote>
+      <p>The code is written by Claude (Anthropic's AI model, via Claude Code). PQMarine decides
+        what to build, tests every behaviour against the original game and confirms or rejects the
+        results.</p>
+      <div class="thanks">
+        <h3>Standing on the shoulders of</h3>
+        <ul>
+          <li><a href="https://github.com/hankmorgan/UWReverseEngineering">hankmorgan</a> for the UW.EXE disassembly, UnderworldGodot and UnderworldExporter</li>
+          <li><a href="https://github.com/abedegno/underworld-exhumed">abedegno</a> for Underworld Exhumed, the byte-exact decompilation the rules are checked against</li>
+          <li><a href="https://www.youtube.com/c/Piecesof8bit">Pieces of 8-bit</a> for the remake of the music</li>
+          <li>The authors of uw-formats.txt, where it all started</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand"><img src="img/ur-icon.svg" alt="" width="40" height="40"><span>Underworld Revisited</span></div>
+  <p>Free, non-commercial fan project under the <a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/LICENSE">MIT License</a>. Not sold, no donations accepted.</p>
+  <p class="muted">Not affiliated with or endorsed by the owners of the Ultima Underworld rights. Ultima and Ultima Underworld are trademarks of their respective owners. The screenshots show the original game's artwork, which belongs to its rights owners and is not covered by this project's licence.</p>
+  <p class="footer-links"><a href="https://github.com/PQMarine/UnderworldRevisited">Source</a><a href="https://github.com/PQMarine/UnderworldRevisited/releases">Releases</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/ROADMAP.md">Roadmap</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/Docs/CONTROLS.md">Controls</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/THIRD_PARTY_NOTICES.md">Notices</a></p>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-prev" aria-label="Previous">&#8249;</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-next" aria-label="Next">&#8250;</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
