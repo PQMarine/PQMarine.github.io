@@ -657,3 +657,33 @@ blockquote {
   .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- Options head with the goblin ---------- */
+.opt-head {
+  display: grid; grid-template-columns: 1fr 240px; gap: 48px; align-items: center;
+  max-width: 980px; margin: 0 auto 48px;
+}
+.opt-head .section-head { margin: 0; text-align: left; }
+.meme {
+  position: relative; margin: 0;
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 24px 70px -24px rgba(0, 0, 0, 0.9), 0 0 50px -20px var(--glow);
+  transform: rotate(2deg);
+  transition: transform 0.4s;
+}
+.meme:hover { transform: rotate(0deg) scale(1.03); }
+.meme img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.meme span {
+  position: absolute; left: 0; right: 0; padding: 0 10px;
+  text-align: center; text-transform: uppercase;
+  font: 900 21px/1.1 var(--serif); letter-spacing: 0.04em; color: #fff;
+  text-shadow: 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000, 0 0 12px rgba(0, 0, 0, 0.9);
+}
+.meme-top { top: 10px; }
+.meme-bottom { bottom: 12px; }
+@media (max-width: 760px) {
+  .opt-head { grid-template-columns: 1fr; gap: 28px; }
+  .opt-head .section-head { text-align: center; }
+  .meme { width: 220px; margin: 0 auto; }
+}
