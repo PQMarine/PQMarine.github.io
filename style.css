@@ -702,10 +702,7 @@ blockquote {
 .keys dd b { color: var(--text); font-weight: 600; }
 kbd { display: inline-block; min-width: 1.9em; padding: 3px 8px; font: 600 13px/1.2 var(--sans); text-align: center; color: var(--text); background: linear-gradient(#2a2119, #18130e); border: 1px solid var(--line-strong); border-bottom-width: 3px; border-radius: 7px; }
 .keys dd kbd { padding: 1px 6px; font-size: 12px; }
-.hood-shot { margin: 0; }
-.hood-shot a { display: block; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
-.hood-shot img { display: block; width: 100%; height: auto; transition: transform 0.6s ease; }
-.hood-shot a:hover img { transform: scale(1.03); }
-.hood-shot figcaption { margin-top: 12px; color: var(--muted); font-size: 14px; text-align: center; }
+.hood-shot { min-width: 0; }
+.hood-shot .tabs { margin-bottom: 14px; }
 @media (max-width: 980px) { .hood { grid-template-columns: 1fr; } }
 @media (max-width: 520px) { .keys > div { grid-template-columns: 1fr; gap: 8px; } }

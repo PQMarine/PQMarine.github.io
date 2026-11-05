@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261105c">
+  <link rel="stylesheet" href="style.css?v=20261105d">
 </head>
 <body>
 
@@ -370,10 +370,20 @@
         <div><dt><kbd>Shift</kbd><kbd>F10</kbd></dt><dd><b>The spell list:</b> search any spell and cast it, without circle, mana or check.</dd></div>
         <div><dt><kbd>Shift</kbd><kbd>F11</kbd></dt><dd><b>Make a creature cast</b> its spell at once.</dd></div>
       </dl>
-      <figure class="hood-shot">
-        <a href="img/uw2-noclip-castle.jpg" class="zoom" data-cap="Ultima Underworld II in noclip: Lord British's castle from above, its triggers and traps labelled."><img src="img/uw2-noclip-castle.jpg" alt="Lord British's castle from above in noclip mode, traps and triggers labelled" loading="lazy"></a>
-        <figcaption>Noclip and full bright in the second game: Lord British's castle from above, its triggers and traps labelled.</figcaption>
-      </figure>
+      <div class="hood-shot">
+        <div class="tabs" role="tablist" id="hoodTabs">
+          <button role="tab" aria-selected="true" data-img="img/hood-display.jpg" data-cap="Shift+F1: the debug display with an outcast in view: where you stand, its every field from goal to hearing, and what the crosshair rests on.">Display</button>
+          <button role="tab" aria-selected="false" data-img="img/hood-tools.jpg" data-cap="The tools tab: a jump to any level and tile, and every spell to search and cast.">Tools</button>
+          <button role="tab" aria-selected="false" data-img="img/hood-bright.jpg" data-cap="F11: full bright, the traps and triggers labelled where they lie.">Full bright</button>
+          <button role="tab" aria-selected="false" data-img="img/hood-noclip.jpg" data-cap="N: noclip above the first level, through walls and ceilings.">Noclip</button>
+          <button role="tab" aria-selected="false" data-img="img/uw2-noclip-castle.jpg" data-cap="The same in the second game: Lord British's castle from above, its triggers and traps labelled.">UW2</button>
+          <span class="tab-glider" aria-hidden="true"></span>
+        </div>
+        <figure class="iface">
+          <div class="iface-frame" id="hoodFrame"></div>
+          <figcaption id="hoodCap">Shift+F1: the debug display with an outcast in view: where you stand, its every field from goal to hearing, and what the crosshair rests on.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -508,6 +518,6 @@
   <button class="lb-next" aria-label="Next">&#8250;</button>
 </div>
 
-<script src="main.js?v=20261105c"></script>
+<script src="main.js?v=20261105d"></script>
 </body>
 </html>

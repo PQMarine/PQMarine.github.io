@@ -281,12 +281,13 @@
   crossfadeTabs("helpTabs", "helpFrame", "helpCap", " in the help window");
   crossfadeTabs("optTabs", "optFrame", "optCap", " options");
   crossfadeTabs("cvTabs", "cvFrame", "cvCap", " colour filter");
+  crossfadeTabs("hoodTabs", "hoodFrame", "hoodCap", " debug view");
 
   // ---------- Lightbox ----------
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lbImg");
   const lbCap = document.getElementById("lbCap");
-  const items = [...document.querySelectorAll("#galleryGrid a, #hood a.zoom")];
+  const items = [...document.querySelectorAll("#galleryGrid a")];
   let idx = 0;
   const show = i => {
     idx = (i + items.length) % items.length;
