@@ -657,3 +657,11 @@ blockquote {
   .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- Resolution block: picture left, text right ---------- */
+.light.flip { grid-template-columns: 1.3fr 1fr; }
+.res-stage { aspect-ratio: 4 / 3; }
+@media (max-width: 980px) {
+  .light.flip { grid-template-columns: 1fr; }
+  .light.flip .light-copy { order: -1; }
+}

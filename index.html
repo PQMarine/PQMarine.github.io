@@ -139,6 +139,24 @@
         <img src="img/light-warm.jpg" alt="Remastered, warm light" class="on">
       </div>
     </div>
+
+    <div class="light flip reveal">
+      <div class="light-stage res-stage" id="resStage">
+        <img src="img/res-native.jpg" alt="The world at the screen's own resolution" class="on" data-res="native">
+        <img src="img/res-original.jpg" alt="The world at the original's 320x200 resolution" data-res="original" loading="lazy">
+      </div>
+      <div class="light-copy">
+        <p class="kicker">Every mode</p>
+        <h3>The world at the original's resolution</h3>
+        <p>One switch draws the 3D view at the original's 320x200 and scales it up with hard
+          edges, up to four times as fine if you like, while the frame, the messages and the
+          panels stay sharp.</p>
+        <div class="seg" role="radiogroup" aria-label="Resolution" id="resToggle">
+          <button role="radio" aria-checked="true" data-res="native">Screen resolution</button>
+          <button role="radio" aria-checked="false" data-res="original">Original 320x200</button>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- FEATURES -->
@@ -296,6 +314,32 @@
     <figure class="iface reveal">
       <div class="iface-frame" id="helpFrame"></div>
       <figcaption id="helpCap">Stats: attributes and skills, and on request the values the original keeps hidden.</figcaption>
+    </figure>
+  </section>
+
+  <!-- OPTIONS -->
+  <section class="section" id="options">
+    <div class="section-head reveal">
+      <p class="kicker">Make it yours</p>
+      <h2>Options for every taste</h2>
+      <p>Every addition can be switched off, so the game plays as it did in 1992. And some go
+        where few remakes go: the whole game can pull apart the colours a colour vision
+        deficiency cannot tell apart.</p>
+    </div>
+    <div class="tabs reveal" role="tablist" id="optTabs">
+      <button role="tab" aria-selected="true" data-img="img/opt-colours.jpg" data-cap="Colours: for red, green or blue weakness the whole game pulls apart the colours that are hard to tell apart, with strength, brightness and contrast, and the health flask can be hatched while poisoned, since red and green are the very pair a red-green deficiency cannot tell apart.">Colours</button>
+      <button role="tab" aria-selected="false" data-img="img/opt-graphics.jpg" data-cap="Graphics: Palette, Palette colours or Remastered, the effect presets, the view angle, gamma, the dither grain and the world at the original's resolution.">Graphics</button>
+      <button role="tab" aria-selected="false" data-img="img/opt-effects.jpg" data-cap="Palette effects: ambient occlusion, grime along the walls, depth, hollows, ground shadows, glow and light sources, each on its own and every pixel still in the original's palette.">Effects</button>
+      <button role="tab" aria-selected="false" data-img="img/opt-motion.jpg" data-cap="Motion: Original, Smooth or Modern, the original's frame rate, and head bob, weapon and swimming as you like them.">Motion</button>
+      <button role="tab" aria-selected="false" data-img="img/opt-sound.jpg" data-cap="Sound: the music on the AdLib, General MIDI or a Roland MT-32, or from recordings of your own.">Sound</button>
+      <button role="tab" aria-selected="false" data-img="img/opt-controls.jpg" data-cap="Controls: every key and mouse button can be changed, with the speeds of mouse look and pointer.">Controls</button>
+      <button role="tab" aria-selected="false" data-img="img/opt-gamepad.jpg" data-cap="Gamepad: button names for Xbox, PlayStation, Nintendo or the Steam Deck, deadzones, and every button can be changed.">Gamepad</button>
+      <button role="tab" aria-selected="false" data-img="img/opt-game.jpg" data-cap="Game: the first or the second game, where the saves live, the original or the modern scheme, fixes for bugs of the original, and the language.">Game</button>
+      <span class="tab-glider" aria-hidden="true"></span>
+    </div>
+    <figure class="iface reveal">
+      <div class="iface-frame" id="optFrame"></div>
+      <figcaption id="optCap">Colours: for red, green or blue weakness the whole game pulls apart the colours that are hard to tell apart, with strength, brightness and contrast, and the health flask can be hatched while poisoned, since red and green are the very pair a red-green deficiency cannot tell apart.</figcaption>
     </figure>
   </section>
 

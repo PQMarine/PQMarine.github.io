@@ -279,6 +279,17 @@
   };
   crossfadeTabs("ifaceTabs", "ifaceFrame", "ifaceCap", " interface");
   crossfadeTabs("helpTabs", "helpFrame", "helpCap", " in the help window");
+  crossfadeTabs("optTabs", "optFrame", "optCap", " options");
+
+  // ---------- Resolution toggle ----------
+  const resToggle = document.getElementById("resToggle");
+  if (resToggle) {
+    const resImgs = [...document.querySelectorAll("#resStage img")];
+    resToggle.querySelectorAll("button").forEach(btn => btn.addEventListener("click", () => {
+      resToggle.querySelectorAll("button").forEach(b => b.setAttribute("aria-checked", String(b === btn)));
+      resImgs.forEach(img => img.classList.toggle("on", img.dataset.res === btn.dataset.res));
+    }));
+  }
 
   // ---------- Lightbox ----------
   const lb = document.getElementById("lightbox");
