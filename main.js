@@ -286,7 +286,7 @@
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lbImg");
   const lbCap = document.getElementById("lbCap");
-  const items = [...document.querySelectorAll("#galleryGrid a")];
+  const items = [...document.querySelectorAll("#galleryGrid a, #hood a.zoom")];
   let idx = 0;
   const show = i => {
     idx = (i + items.length) % items.length;

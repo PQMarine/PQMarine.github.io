@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261105b">
+  <link rel="stylesheet" href="style.css?v=20261105c">
 </head>
 <body>
 
@@ -352,6 +352,31 @@
     </figure>
   </section>
 
+  <!-- UNDER THE HOOD -->
+  <section class="section" id="hood">
+    <div class="section-head reveal">
+      <p class="kicker">Under the hood</p>
+      <h2>Look behind the walls</h2>
+      <p>A handful of debug keys show what the game keeps hidden: the tile under your feet, the object
+        under the crosshair, the traps and triggers where they lie, the game's own variables. They are
+        off by default; "Debug keys on" at the end of the keyboard tab under Controls switches them on.</p>
+    </div>
+    <div class="hood reveal">
+      <dl class="keys">
+        <div><dt><kbd>Shift</kbd><kbd>F1</kbd></dt><dd><b>The debug display.</b> The tile you stand on, the texture and object under the crosshair, the nearest creature, the game variables and the trap log.</dd></div>
+        <div><dt><kbd>N</kbd></dt><dd><b>Noclip.</b> A free camera through walls in full bright; <kbd>Page Down</kbd> and <kbd>Page Up</kbd> change the level, N again puts the character where the camera is.</dd></div>
+        <div><dt><kbd>F11</kbd></dt><dd><b>Full bright,</b> with every trap and trigger labelled where it lies.</dd></div>
+        <div><dt><kbd>Shift</kbd><kbd>F7</kbd></dt><dd><b>Jump</b> to any level and tile.</dd></div>
+        <div><dt><kbd>Shift</kbd><kbd>F10</kbd></dt><dd><b>The spell list:</b> search any spell and cast it, without circle, mana or check.</dd></div>
+        <div><dt><kbd>Shift</kbd><kbd>F11</kbd></dt><dd><b>Make a creature cast</b> its spell at once.</dd></div>
+      </dl>
+      <figure class="hood-shot">
+        <a href="img/uw2-noclip-castle.jpg" class="zoom" data-cap="Ultima Underworld II in noclip: Lord British's castle from above, its triggers and traps labelled."><img src="img/uw2-noclip-castle.jpg" alt="Lord British's castle from above in noclip mode, traps and triggers labelled" loading="lazy"></a>
+        <figcaption>Noclip and full bright in the second game: Lord British's castle from above, its triggers and traps labelled.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- GALLERY -->
   <section class="section" id="gallery">
     <div class="section-head reveal">
@@ -483,6 +508,6 @@
   <button class="lb-next" aria-label="Next">&#8250;</button>
 </div>
 
-<script src="main.js?v=20261105b"></script>
+<script src="main.js?v=20261105c"></script>
 </body>
 </html>
