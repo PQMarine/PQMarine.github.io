@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Underworld Revisited - Ultima Underworld reimplemented in Unity</title>
-  <meta name="description" content="Underworld Revisited is a free, open-source reimplementation of Ultima Underworld: The Stygian Abyss (1992) in Unity for Windows and Linux, read from your own copy of the game. Play it as it was or with a modern interface; Ultima Underworld II as a preview.">
+  <meta name="description" content="Underworld Revisited is a free, open-source reimplementation of Ultima Underworld: The Stygian Abyss (1992) in Unity for Windows and Linux, read from your own copy of the game from GOG or Steam. Play it as it was or with a modern interface; Ultima Underworld II as a preview.">
   <link rel="canonical" href="https://pqmarine.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Underworld Revisited">
@@ -38,7 +38,7 @@
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "downloadUrl": "https://github.com/PQMarine/UnderworldRevisited/releases/latest",
     "codeRepository": "https://github.com/PQMarine/UnderworldRevisited",
-    "softwareRequirements": "Ultima Underworld 1+2 from GOG.com (game data not included)",
+    "softwareRequirements": "Ultima Underworld 1+2 from GOG.com or Ultima Underworld I and II from Steam (game data not included)",
     "author": { "@type": "Person", "name": "PQMarine", "url": "https://github.com/PQMarine" },
     "sameAs": ["https://github.com/PQMarine/UnderworldRevisited"]
   }
@@ -48,7 +48,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261105d">
+  <link rel="stylesheet" href="style.css?v=20261105e">
 </head>
 <body>
 
@@ -93,11 +93,11 @@
       <div class="hero-cta reveal">
         <a class="btn btn-primary" href="https://github.com/PQMarine/UnderworldRevisited/releases/latest">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
-          Download <span class="version" data-version>0.16.2</span>
+          Download <span class="version" data-version>0.16.3</span>
         </a>
         <a class="btn btn-ghost" href="#compare">Take a look</a>
       </div>
-      <p class="hero-note reveal">Needs <strong>Ultima Underworld 1+2 from GOG.com</strong>. No game data included.</p>
+      <p class="hero-note reveal">Needs <strong>Ultima Underworld from GOG.com or Steam</strong>. No game data included.</p>
     </div>
     <a class="scroll-cue" href="#stats" aria-label="Scroll down"><span></span></a>
   </section>
@@ -493,6 +493,7 @@
       <li class="reveal"><time>0.16.0</time><div><h3>Original bugs</h3><p>Optional fixes for bugs of 1992 that could end the game.</p></div></li>
       <li class="reveal"><time>0.16.1</time><div><h3>Light and language</h3><p>Ambient light and a light colour for Remastered, and translations that follow French and Italian articles.</p></div></li>
       <li class="reveal"><time>0.16.2</time><div><h3>Bags and frames</h3><p>The Classic preset at 4:3 in the modern scheme, bags in bags that keep their things, and the colour help across the whole screen.</p></div></li>
+      <li class="reveal"><time>0.16.3</time><div><h3>Steam</h3><p>Ultima Underworld from Steam with Steam Cloud saves, and the game's manual, map and cluebook in the help.</p></div></li>
     </ol>
   </section>
 
@@ -503,12 +504,18 @@
       <h2>Descend</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><span class="step-n">1</span><h3>Get the original</h3><p>Install <b>Ultima Underworld 1+2</b> from GOG.com. Only this version is supported.</p></div>
+      <div class="step reveal"><span class="step-n">1</span><h3>Get the original</h3><p>Install <b>Ultima Underworld 1+2</b> from GOG.com or <b>Ultima Underworld I and II</b> from Steam. Both carry the same game files; other versions are not supported.</p></div>
       <div class="step reveal"><span class="step-n">2</span><h3>Download</h3><p>Grab the latest release for Windows (10+, 64-bit) or Linux (x86-64) and unpack it into a folder of its own.</p></div>
-      <div class="step reveal"><span class="step-n">3</span><h3>Play</h3><p>Start <code>UR.exe</code> or <code>UR.x86_64</code>. It finds your GOG installation, or asks once for the folder with <code>game.gog</code>.</p></div>
+      <div class="step reveal"><span class="step-n">3</span><h3>Play</h3><p>Start <code>UR.exe</code> or <code>UR.x86_64</code>. It finds your GOG or Steam installation by itself, or asks once for the folder with <code>game.gog</code> or <code>game.bin</code>.</p></div>
+    </div>
+    <div class="step-tip reveal">
+      <h3>Steam Cloud</h3>
+      <p>Playing the Steam version? Put <code>"&lt;folder&gt;\UR.exe" %command%</code> into the game's
+        <b>Properties &gt; General &gt; Launch Options</b>. Then "Play" in Steam starts Underworld Revisited,
+        and Steam Cloud carries your save games before and after, as it does for the original.</p>
     </div>
     <div class="start-cta reveal">
-      <a class="btn btn-primary btn-lg" href="https://github.com/PQMarine/UnderworldRevisited/releases/latest">Download <span data-version>0.16.2</span></a>
+      <a class="btn btn-primary btn-lg" href="https://github.com/PQMarine/UnderworldRevisited/releases/latest">Download <span data-version>0.16.3</span></a>
       <p class="muted">Nothing is written to your installation. Save games stay compatible with the original.</p>
     </div>
   </section>
@@ -553,6 +560,6 @@
   <button class="lb-next" aria-label="Next">&#8250;</button>
 </div>
 
-<script src="main.js?v=20261105d"></script>
+<script src="main.js?v=20261105e"></script>
 </body>
 </html>

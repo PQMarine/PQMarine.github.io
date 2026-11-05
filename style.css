@@ -706,3 +706,15 @@ kbd { display: inline-block; min-width: 1.9em; padding: 3px 8px; font: 600 13px/
 .hood-shot .tabs { margin-bottom: 14px; }
 @media (max-width: 980px) { .hood { grid-template-columns: 1fr; } }
 @media (max-width: 520px) { .keys > div { grid-template-columns: 1fr; gap: 8px; } }
+
+/* ---------- Steam Cloud tip ---------- */
+.step-tip {
+  margin-top: 16px; padding: 24px 28px;
+  border-radius: var(--radius);
+  background: var(--panel); border: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+.step-tip h3 { margin-bottom: 6px; }
+.step-tip p { margin: 0; color: var(--muted); }
+.step-tip p b { color: var(--text); }
+.step-tip code { overflow-wrap: anywhere; }
