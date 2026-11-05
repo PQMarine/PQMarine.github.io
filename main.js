@@ -242,38 +242,43 @@
   });
 
   // ---------- Interface tabs ----------
-  const tabs = document.getElementById("ifaceTabs");
-  const glider = tabs.querySelector(".tab-glider");
-  const ifaceFrame = document.getElementById("ifaceFrame");
-  const ifaceCap = document.getElementById("ifaceCap");
-  const tabButtons = [...tabs.querySelectorAll("button")];
-  const moveGlider = btn => {
-    glider.style.left = btn.offsetLeft + "px";
-    glider.style.top = btn.offsetTop + "px";
-    glider.style.width = btn.offsetWidth + "px";
-    glider.style.height = btn.offsetHeight + "px";
+  // Tabs over a stack of same-spot pictures: a switch crossfades, so only what changes changes.
+  const crossfadeTabs = (tabsId, frameId, capId, altSuffix) => {
+    const tabs = document.getElementById(tabsId);
+    if (!tabs) return;
+    const glider = tabs.querySelector(".tab-glider");
+    const frame = document.getElementById(frameId);
+    const cap = document.getElementById(capId);
+    const buttons = [...tabs.querySelectorAll("button")];
+    const moveGlider = btn => {
+      glider.style.left = btn.offsetLeft + "px";
+      glider.style.top = btn.offsetTop + "px";
+      glider.style.width = btn.offsetWidth + "px";
+      glider.style.height = btn.offsetHeight + "px";
+    };
+    const imgs = buttons.map((b, i) => {
+      const img = document.createElement("img");
+      img.src = b.dataset.img;
+      img.alt = b.textContent + altSuffix;
+      img.decoding = "async";
+      if (i === 0) img.classList.add("on");
+      frame.appendChild(img);
+      return img;
+    });
+    buttons.forEach((btn, i) => btn.addEventListener("click", () => {
+      buttons.forEach(b => b.setAttribute("aria-selected", String(b === btn)));
+      moveGlider(btn);
+      imgs.forEach((img, k) => img.classList.toggle("on", k === i));
+      cap.textContent = btn.dataset.cap;
+    }));
+    const sync = () => moveGlider(buttons.find(b => b.getAttribute("aria-selected") === "true"));
+    window.addEventListener("resize", sync);
+    window.addEventListener("load", sync);
+    if (document.fonts) document.fonts.ready.then(sync);
+    sync();
   };
-  // All pictures stacked; a switch crossfades, so the dungeon stays and only the interface changes.
-  const ifaceImgs = tabButtons.map((b, i) => {
-    const img = document.createElement("img");
-    img.src = b.dataset.img;
-    img.alt = b.textContent + " interface";
-    img.decoding = "async";
-    if (i === 0) img.classList.add("on");
-    ifaceFrame.appendChild(img);
-    return img;
-  });
-  tabButtons.forEach((btn, i) => btn.addEventListener("click", () => {
-    tabButtons.forEach(b => b.setAttribute("aria-selected", String(b === btn)));
-    moveGlider(btn);
-    ifaceImgs.forEach((img, k) => img.classList.toggle("on", k === i));
-    ifaceCap.textContent = btn.dataset.cap;
-  }));
-  const syncGlider = () => moveGlider(tabButtons.find(b => b.getAttribute("aria-selected") === "true"));
-  window.addEventListener("resize", syncGlider);
-  window.addEventListener("load", syncGlider);
-  if (document.fonts) document.fonts.ready.then(syncGlider);
-  syncGlider();
+  crossfadeTabs("ifaceTabs", "ifaceFrame", "ifaceCap", " interface");
+  crossfadeTabs("helpTabs", "helpFrame", "helpCap", " in the help window");
 
   // ---------- Lightbox ----------
   const lb = document.getElementById("lightbox");
