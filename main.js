@@ -280,6 +280,7 @@
   crossfadeTabs("ifaceTabs", "ifaceFrame", "ifaceCap", " interface");
   crossfadeTabs("helpTabs", "helpFrame", "helpCap", " in the help window");
   crossfadeTabs("optTabs", "optFrame", "optCap", " options");
+  crossfadeTabs("cvTabs", "cvFrame", "cvCap", " colour filter");
 
   // ---------- Lightbox ----------
   const lb = document.getElementById("lightbox");

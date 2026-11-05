@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261105">
+  <link rel="stylesheet" href="style.css?v=20261105b">
 </head>
 <body>
 
@@ -330,6 +330,26 @@
       <div class="iface-frame" id="optFrame"></div>
       <figcaption id="optCap">Colours: for red, green or blue weakness the whole game pulls apart the colours that are hard to tell apart, with strength, brightness and contrast, and the health flask can be hatched while poisoned, since red and green are the very pair a red-green deficiency cannot tell apart.</figcaption>
     </figure>
+
+    <div class="sub-head reveal">
+      <p class="kicker">Colour vision</p>
+      <h3>The whole game, recoloured</h3>
+      <p>The same spot with each filter: the view, the frame, the character and the flasks all follow.
+        And when a poison turns the health flask green, it can carry a hatch as well.</p>
+    </div>
+    <div class="tabs reveal" role="tablist" id="cvTabs">
+      <button role="tab" aria-selected="true" data-img="img/cv-off.jpg" data-cap="Off: the colours as the original shows them.">Off</button>
+      <button role="tab" aria-selected="false" data-img="img/cv-red.jpg" data-cap="Red (protanopia): what a red weakness loses is put back into the channels it can see.">Red</button>
+      <button role="tab" aria-selected="false" data-img="img/cv-green.jpg" data-cap="Green (deuteranopia): the most common deficiency, the same idea for a green weakness.">Green</button>
+      <button role="tab" aria-selected="false" data-img="img/cv-blue.jpg" data-cap="Blue (tritanopia): for a blue weakness, blue and yellow pulled apart.">Blue</button>
+      <button role="tab" aria-selected="false" data-img="img/cv-poisoned.jpg" data-cap="Poisoned, with the red filter: the health flask turns green.">Poisoned</button>
+      <button role="tab" aria-selected="false" data-img="img/cv-hatched.jpg" data-cap="Poisoned with the hatch on: the flask can no longer be mistaken, whatever the eye makes of red and green.">Hatched</button>
+      <span class="tab-glider" aria-hidden="true"></span>
+    </div>
+    <figure class="iface reveal">
+      <div class="iface-frame" id="cvFrame"></div>
+      <figcaption id="cvCap">Off: the colours as the original shows them.</figcaption>
+    </figure>
   </section>
 
   <!-- GALLERY -->
@@ -463,6 +483,6 @@
   <button class="lb-next" aria-label="Next">&#8250;</button>
 </div>
 
-<script src="main.js?v=20261105"></script>
+<script src="main.js?v=20261105b"></script>
 </body>
 </html>
