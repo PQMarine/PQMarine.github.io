@@ -43,12 +43,84 @@
     "sameAs": ["https://github.com/PQMarine/UnderworldRevisited"]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need the original game?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Underworld Revisited contains none of the game's data: it reads the graphics, sounds, texts and levels from your own copy, Ultima Underworld 1+2 from GOG.com or Ultima Underworld I from Steam. Other releases are not supported."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. It is free and open source under the MIT licence, and the code is on GitHub."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need DOSBox?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It runs natively on Windows and Linux and reads the original's files itself; the DOSBox that comes with the GOG or Steam version is not needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it play like the original?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That is the aim. The rules are read from the original's code and checked against the game, and save games go both ways between the two. With the original scheme and the Palette mode it looks and steers as in 1992, and every addition can be switched off. Where it still differs, the list of deviations says so."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I play with mouse look and a wide screen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The modern scheme has mouse look, WASD, an action bar and bags, on any screen width. The classic interface can be widened too, and a slider sets the view angle. Shift+F2 or the switch in the menu bar changes the scheme at any time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it run on Linux and the Steam Deck?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every release has a Linux build, tested less than the Windows one. The Steam Deck's buttons have their own glyphs, but the game has not been tried on a Deck yet; reports are welcome."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use mods?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Mods go into the folder Mods, and those made with the Underworld Editor (Avalonia) work as they are. The Mods window sets their order and switches them on and off."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about Ultima Underworld II?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It can be tried as a preview: its menus, character creation and saves, Britannia with its game screen, map and conversations, and its creatures. Not yet the whole of its rules."
+        }
+      }
+    ]
+  }
+  </script>
   <meta name="theme-color" content="#0b0907">
   <link rel="icon" type="image/svg+xml" href="img/ur-icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261105f">
+  <link rel="stylesheet" href="style.css?v=20261109a">
 </head>
 <body>
 
@@ -64,6 +136,7 @@
     <a href="#gallery">Gallery</a>
     <a href="#journey">Journey</a>
     <a href="#start">Play</a>
+    <a href="#faq">FAQ</a>
   </nav>
   <a class="btn btn-ghost btn-sm nav-gh" href="https://github.com/PQMarine/UnderworldRevisited">
     <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -537,6 +610,48 @@
     <div class="start-cta reveal">
       <a class="btn btn-primary btn-lg" href="https://github.com/PQMarine/UnderworldRevisited/releases/latest">Download <span data-version>0.18.0</span></a>
       <p class="muted">Nothing is written to your installation. Save games stay compatible with the original.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-head reveal">
+      <p class="kicker">Questions</p>
+      <h2>Asked along the way</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item reveal">
+        <summary>Do I need the original game?</summary>
+        <p>Yes. Underworld Revisited contains none of the game's data: it reads the graphics, sounds, texts and levels from your own copy, Ultima Underworld 1+2 from GOG.com or Ultima Underworld I from Steam. Other releases are not supported.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Is it free?</summary>
+        <p>Yes. It is free and open source under the MIT licence, and the code is on <a href="https://github.com/PQMarine/UnderworldRevisited">GitHub</a>.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Do I need DOSBox?</summary>
+        <p>No. It runs natively on Windows and Linux and reads the original's files itself; the DOSBox that comes with the GOG or Steam version is not needed.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Does it play like the original?</summary>
+        <p>That is the aim. The rules are read from the original's code and checked against the game, and save games go both ways between the two. With the original scheme and the Palette mode it looks and steers as in 1992, and every addition can be switched off. Where it still differs, <a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/Docs/DEVIATIONS.md">the list of deviations</a> says so.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Can I play with mouse look and a wide screen?</summary>
+        <p>Yes. The modern scheme has mouse look, WASD, an action bar and bags, on any screen width. The classic interface can be widened too, and a slider sets the view angle. Shift+F2 or the switch in the menu bar changes the scheme at any time.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Does it run on Linux and the Steam Deck?</summary>
+        <p>Every release has a Linux build, tested less than the Windows one. The Steam Deck's buttons have their own glyphs, but the game has not been tried on a Deck yet; reports are welcome.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Can I use mods?</summary>
+        <p>Yes. Mods go into the folder Mods, and those made with the Underworld Editor (Avalonia) work as they are. The Mods window sets their order and switches them on and off.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>What about Ultima Underworld II?</summary>
+        <p>It can be tried as a preview: its menus, character creation and saves, Britannia with its game screen, map and conversations, and its creatures. Not yet the whole of its rules.</p>
+      </details>
     </div>
   </section>
 
