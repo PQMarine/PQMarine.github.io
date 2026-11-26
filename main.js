@@ -77,7 +77,7 @@
   counters.forEach(c => countIO.observe(c));
 
   // ---------- Compare slider ----------
-  // Each block below runs only on the page that has its elements (index.html, uw2.html).
+  // Each block below runs only where its elements are.
   const box = document.getElementById("compareBox");
   const range = document.getElementById("compareRange");
   const setPos = v => box.style.setProperty("--pos", v + "%");
@@ -115,6 +115,15 @@
       heroIO.observe(document.querySelector(".hero"));
     }
   }
+
+  // ---------- Videos that play while on screen (data-autoplay), never under reduced motion ----------
+  document.querySelectorAll("video[data-autoplay]").forEach(v => {
+    if (reduce) return;
+    new IntersectionObserver(e => {
+      const p = e[0].isIntersecting ? v.play() : (v.pause(), null);
+      if (p && p.catch) p.catch(() => {});
+    }, { threshold: 0.3 }).observe(v);
+  });
 
   // ---------- UW2 pictures: a slow crossfade, dots or a click to step ----------
   const uw2Stage = document.getElementById("uw2Stage");
