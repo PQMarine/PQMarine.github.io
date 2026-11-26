@@ -518,14 +518,7 @@ h3 { margin: 0 0 8px; font: 700 19px/1.3 var(--serif); letter-spacing: 0.02em; }
 }
 .game h3 { font-size: clamp(22px, 2.6vw, 30px); margin: 0 0 10px; }
 .game h3 span { font: 500 0.6em var(--sans); color: var(--muted); margin-left: 6px; letter-spacing: 0.04em; }
-.game-body > p { color: var(--muted); margin: 0 0 14px; }
-.game ul { margin: 0 0 18px; padding: 0; list-style: none; }
-.game li { position: relative; padding-left: 20px; margin: 6px 0; color: var(--text); font-size: 15px; }
-.game li::before {
-  content: ""; position: absolute; left: 2px; top: 0.6em;
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--accent); box-shadow: 0 0 8px var(--accent);
-}
+.game-body > p { color: var(--muted); margin: 0 0 18px; }
 .game .game-stores { margin: auto 0 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14px; }
 @media (max-width: 860px) {
   .games { grid-template-columns: 1fr; }
