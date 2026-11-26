@@ -294,6 +294,7 @@
     sync();
   };
   crossfadeTabs("ifaceTabs", "ifaceFrame", "ifaceCap", " interface");
+  crossfadeTabs("uw2LookTabs", "uw2LookFrame", "uw2LookCap", " mode in Ultima Underworld II");
   crossfadeTabs("helpTabs", "helpFrame", "helpCap", " in the help window");
   crossfadeTabs("optTabs", "optFrame", "optCap", " options");
   crossfadeTabs("cvTabs", "cvFrame", "cvCap", " colour filter");
