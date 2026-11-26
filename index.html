@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Underworld Revisited - Ultima Underworld reimplemented in Unity</title>
-  <meta name="description" content="Underworld Revisited is a free, open-source reimplementation of Ultima Underworld: The Stygian Abyss (1992) in Unity for Windows and Linux, read from your own copy of the game from the EA app, GOG or Steam. Play it as it was or with a modern interface; Ultima Underworld II as a playable alpha.">
+  <meta name="description" content="Underworld Revisited is a free, open-source reimplementation of Ultima Underworld: The Stygian Abyss (1992) in Unity for Windows and Linux, read from your own copy of the game from the EA app, GOG or Steam. Play it as it was or with a modern interface; Ultima Underworld II in beta.">
   <link rel="canonical" href="https://pqmarine.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Underworld Revisited">
@@ -25,7 +25,7 @@
     "@type": ["VideoGame", "SoftwareApplication"],
     "name": "Underworld Revisited",
     "alternateName": "Ultima Underworld in Unity",
-    "description": "A free, open-source reimplementation of Ultima Underworld: The Stygian Abyss (1992) in Unity, read from the player's own copy of the game. Ultima Underworld II is included as a playable alpha.",
+    "description": "A free, open-source reimplementation of Ultima Underworld: The Stygian Abyss (1992) in Unity, read from the player's own copy of the game. Ultima Underworld II is included, in beta.",
     "url": "https://pqmarine.github.io/",
     "image": "https://pqmarine.github.io/img/ur14.jpg",
     "applicationCategory": "GameApplication",
@@ -38,7 +38,7 @@
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "downloadUrl": "https://github.com/PQMarine/UnderworldRevisited/releases/latest",
     "codeRepository": "https://github.com/PQMarine/UnderworldRevisited",
-    "softwareRequirements": "Ultima Underworld I from the EA app, GOG.com or Steam (game data not included)",
+    "softwareRequirements": "Ultima Underworld I, and for the second game Ultima Underworld II, from the EA app, GOG.com or Steam (game data not included)",
     "author": { "@type": "Person", "name": "PQMarine", "url": "https://github.com/PQMarine" },
     "sameAs": ["https://github.com/PQMarine/UnderworldRevisited"]
   }
@@ -109,7 +109,7 @@
         "name": "What about Ultima Underworld II?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It is a playable alpha: every rule of the game is built and was checked step by step against the original, and the classic interface is complete. It has not yet been played through from start to end, and its modern interface is a provisional one for now."
+          "text": "It is in beta: every rule, the music and the cutscenes are built, the whole game has been played through against the original, and its classic interface was checked against the original area by area. It has the first game's modern interface too. It needs Ultima Underworld II from the EA app, GOG.com or Steam, sold on its own."
         }
       }
     ]
@@ -120,7 +120,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261109a">
+  <link rel="stylesheet" href="style.css?v=20261126a">
 </head>
 <body>
 
@@ -134,6 +134,7 @@
     <a href="#interfaces">Interfaces</a>
     <a href="#mods">Mods</a>
     <a href="#gallery">Gallery</a>
+    <a href="uw2.html">UW2</a>
     <a href="#journey">Journey</a>
     <a href="#start">Play</a>
     <a href="#faq">FAQ</a>
@@ -171,7 +172,7 @@
         </a>
         <a class="btn btn-ghost" href="#compare">Take a look</a>
       </div>
-      <p class="hero-note reveal">Needs <strong>Ultima Underworld I</strong> from <a href="https://www.ea.com/games/ultima/ultima-underworld-the-stygian-abyss" target="_blank" rel="noopener">the EA app</a>, <a href="https://www.gog.com/en/game/ultima_underworld_1" target="_blank" rel="noopener">GOG.com</a> or <a href="https://store.steampowered.com/app/3067580/" target="_blank" rel="noopener">Steam</a>. No game data included.</p>
+      <p class="hero-note reveal">Needs <strong>Ultima Underworld I</strong> from <a href="https://www.ea.com/games/ultima/ultima-underworld-the-stygian-abyss" target="_blank" rel="noopener">the EA app</a>, <a href="https://www.gog.com/en/game/ultima_underworld_1" target="_blank" rel="noopener">GOG.com</a> or <a href="https://store.steampowered.com/app/3067580/" target="_blank" rel="noopener">Steam</a>. No game data included. <a href="uw2.html">Ultima Underworld II</a> is in beta.</p>
     </div>
     <a class="scroll-cue" href="#stats" aria-label="Scroll down"><span></span></a>
   </section>
@@ -540,21 +541,21 @@
   </section>
 
   <!-- UW2 -->
-  <section class="section uw2">
+  <section class="section uw2" id="uw2">
     <div class="uw2-inner reveal">
       <div>
-        <p class="kicker">Playable alpha since 0.22.0</p>
-        <h2>Britannia is next</h2>
-        <p>Ultima Underworld II is a playable alpha: every rule of the game is built and was
-          checked step by step against the original, and the classic interface is complete. It has
-          not yet been played through from start to end, and its modern interface is a provisional
-          one for now.</p>
-        <a class="btn btn-ghost" href="https://github.com/PQMarine/UnderworldRevisited/blob/main/Docs/UW2-PLAN.md">Read the UW2 plan</a>
+        <p class="kicker">Ultima Underworld II &middot; In beta</p>
+        <h2>The Labyrinth of Worlds</h2>
+        <p>The second game is in beta: every rule, the music and the cutscenes are built, the whole
+          game has been played through against the original, and its classic interface was checked
+          against the original area by area. The first game's modern interface comes with it, drawn
+          from its own art.</p>
+        <a class="btn btn-primary" href="uw2.html">Ultima Underworld II</a>
       </div>
       <figure class="uw2-show">
         <div class="uw2-stage" id="uw2Stage">
           <video src="video/uw2-throne.mp4" poster="video/uw2-throne.jpg" class="on" muted loop playsinline preload="metadata" aria-label="Lord British's throne room in the classic UW2 screen" data-cap="Lord British's throne room, in the original's game screen" data-hold="14000"></video>
-          <img src="img/uw2-throne-modern.jpg" alt="The throne room in the modern scheme" data-cap="The same throne room in the modern scheme" loading="lazy">
+          <img src="img/uw2-modern.jpg" alt="The throne room in the modern scheme" data-cap="The same throne room in the modern scheme" loading="lazy">
           <img src="img/uw2-nell.jpg" alt="A conversation with Nell" data-cap="A conversation with Nell, the original's portraits" loading="lazy">
           <span class="uw2-badge" aria-hidden="true">II</span>
         </div>
@@ -618,7 +619,7 @@
       <h2>Descend</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><span class="step-n">1</span><h3>Get the original</h3><p>Get <b>Ultima Underworld I</b> from <a href="https://www.ea.com/games/ultima/ultima-underworld-the-stygian-abyss" target="_blank" rel="noopener">the EA app</a>, <a href="https://www.gog.com/en/game/ultima_underworld_1" target="_blank" rel="noopener">GOG.com</a> or <a href="https://store.steampowered.com/app/3067580/" target="_blank" rel="noopener">Steam</a> and install it. All three carry the same game files; other versions are not supported.</p></div>
+      <div class="step reveal"><span class="step-n">1</span><h3>Get the original</h3><p>Get <b>Ultima Underworld I</b> from <a href="https://www.ea.com/games/ultima/ultima-underworld-the-stygian-abyss" target="_blank" rel="noopener">the EA app</a>, <a href="https://www.gog.com/en/game/ultima_underworld_1" target="_blank" rel="noopener">GOG.com</a> or <a href="https://store.steampowered.com/app/3067580/" target="_blank" rel="noopener">Steam</a> and install it. All three carry the same game files; other versions are not supported. For the second game, <a href="uw2.html#start">Ultima Underworld II</a>.</p></div>
       <div class="step reveal"><span class="step-n">2</span><h3>Download</h3><p>Grab the latest release for Windows (10+, 64-bit) or Linux (x86-64) and unpack it into a folder of its own.</p></div>
       <div class="step reveal"><span class="step-n">3</span><h3>Play</h3><p>Start <code>UR.exe</code> or <code>UR.x86_64</code>. It finds your EA app, GOG or Steam installation by itself, or asks once for the folder with <code>game.gog</code> or <code>game.bin</code>. The <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3834373480" target="_blank" rel="noopener">Steam guide</a> walks through it step by step.</p></div>
     </div>
@@ -665,7 +666,7 @@
       </details>
       <details class="faq-item reveal">
         <summary>What about Ultima Underworld II?</summary>
-        <p>It is a playable alpha: every rule of the game is built and was checked step by step against the original, and the classic interface is complete. It has not yet been played through from start to end, and its modern interface is a provisional one for now.</p>
+        <p>It is in beta: every rule, the music and the cutscenes are built, the whole game has been played through against the original, and its classic interface was checked against the original area by area. It has the first game's modern interface too. It needs Ultima Underworld II from the EA app, GOG.com or Steam, sold on its own.</p>
       </details>
     </div>
   </section>
@@ -700,7 +701,7 @@
   <div class="footer-brand"><img src="img/ur-icon.svg" alt="" width="40" height="40"><span>Underworld Revisited</span></div>
   <p>Free, non-commercial fan project under the <a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/LICENSE">MIT License</a>. Not sold, no donations accepted.</p>
   <p class="muted">Not affiliated with or endorsed by the owners of the Ultima Underworld rights. Ultima and Ultima Underworld are trademarks of their respective owners. The screenshots show the original game's artwork, which belongs to its rights owners and is not covered by this project's licence.</p>
-  <p class="footer-links"><a href="https://github.com/PQMarine/UnderworldRevisited">Source</a><a href="https://github.com/PQMarine/UnderworldRevisited/releases">Releases</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/ROADMAP.md">Roadmap</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/Docs/CONTROLS.md">Controls</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/THIRD_PARTY_NOTICES.md">Notices</a></p>
+  <p class="footer-links"><a href="uw2.html">Ultima Underworld II</a><a href="https://github.com/PQMarine/UnderworldRevisited">Source</a><a href="https://github.com/PQMarine/UnderworldRevisited/releases">Releases</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/ROADMAP.md">Roadmap</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/Docs/CONTROLS.md">Controls</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/THIRD_PARTY_NOTICES.md">Notices</a></p>
 </footer>
 
 <div class="lightbox" id="lightbox" hidden>
@@ -710,6 +711,6 @@
   <button class="lb-next" aria-label="Next">&#8250;</button>
 </div>
 
-<script src="main.js?v=20261105f"></script>
+<script src="main.js?v=20261126a"></script>
 </body>
 </html>

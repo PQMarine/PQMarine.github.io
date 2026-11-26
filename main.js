@@ -26,7 +26,9 @@
     nav.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
   }));
-  const links = new Map([...document.querySelectorAll(".nav-links a")].map(a => [a.getAttribute("href").slice(1), a]));
+  // Only the links to a section of this page take part (#features); a link to the other page does not.
+  const links = new Map([...document.querySelectorAll(".nav-links a")].filter(a => a.getAttribute("href").startsWith("#"))
+    .map(a => [a.getAttribute("href").slice(1), a]));
   const spy = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
@@ -75,12 +77,13 @@
   counters.forEach(c => countIO.observe(c));
 
   // ---------- Compare slider ----------
+  // Each block below runs only on the page that has its elements (index.html, uw2.html).
   const box = document.getElementById("compareBox");
   const range = document.getElementById("compareRange");
   const setPos = v => box.style.setProperty("--pos", v + "%");
-  range.addEventListener("input", () => setPos(range.value));
+  if (box && range) range.addEventListener("input", () => setPos(range.value));
   // A gentle sweep once it comes into view, to show it can be dragged.
-  if (!reduce) {
+  if (box && range && !reduce) {
     const sweepIO = new IntersectionObserver(entries => {
       if (!entries[0].isIntersecting) return;
       sweepIO.disconnect();
@@ -155,6 +158,7 @@
   // ---------- Graphics lab ----------
   const lab = { mode: "palette", fx: "full" };
   const labStage = document.getElementById("labStage");
+  if (labStage) {
   const labBadge = document.getElementById("labBadge");
   const labText = document.getElementById("labText");
   const modeNames = { palette: "Palette", colours: "Palette colours", remastered: "Remastered" };
@@ -202,9 +206,11 @@
   ["pointerup", "pointerleave", "pointercancel"].forEach(ev => labStage.addEventListener(ev, peekOff));
   labStage.addEventListener("contextmenu", e => e.preventDefault());
   renderLab();
+  }
 
   // ---------- Light colour ----------
   const lightStage = document.getElementById("lightStage");
+  if (lightStage) {
   const lightImgs = new Map();
   const lightFirst = lightStage.querySelector("img");
   document.querySelectorAll(".swatches button").forEach((btn, i) => {
@@ -225,6 +231,7 @@
       lightStage.style.boxShadow = `0 40px 120px -30px rgba(0,0,0,.9), 0 0 90px -30px ${getComputedStyle(btn).getPropertyValue("--sw")}`;
     });
   });
+  }
 
   // ---------- Card spotlight + tilt ----------
   document.querySelectorAll("[data-tilt]").forEach(card => {

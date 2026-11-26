@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ultima Underworld II in Underworld Revisited - Labyrinth of Worlds, in beta</title>
+  <meta name="description" content="Ultima Underworld II: Labyrinth of Worlds (1993) in Underworld Revisited, a free, open-source reimplementation in Unity for Windows and Linux. In beta: every rule, the music and the cutscenes are built, and the whole game has been played through against the original. Read from your own copy from the EA app, GOG or Steam.">
+  <link rel="canonical" href="https://pqmarine.github.io/uw2.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Underworld Revisited">
+  <meta property="og:url" content="https://pqmarine.github.io/uw2.html">
+  <meta property="og:title" content="Ultima Underworld II in Underworld Revisited">
+  <meta property="og:description" content="Labyrinth of Worlds (1993), reimplemented in Unity and in beta. Free and open source, for Windows and Linux.">
+  <meta property="og:image" content="https://pqmarine.github.io/img/uw2-hall.jpg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:image:alt" content="A hall of Lord British's castle in Underworld Revisited's Remastered mode">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ultima Underworld II in Underworld Revisited">
+  <meta name="twitter:description" content="Labyrinth of Worlds (1993), reimplemented in Unity and in beta. Free and open source, for Windows and Linux.">
+  <meta name="twitter:image" content="https://pqmarine.github.io/img/uw2-hall.jpg">
+  <meta name="theme-color" content="#0b0907">
+  <link rel="icon" type="image/svg+xml" href="img/ur-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261126a">
+</head>
+<body class="page-uw2">
+
+<canvas id="embers" aria-hidden="true"></canvas>
+
+<header class="nav" id="nav">
+  <a class="brand" href="index.html"><img src="img/ur-icon.svg" alt="" width="32" height="32"><span>Underworld Revisited</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html">Ultima Underworld I</a>
+    <a href="#state">Beta</a>
+    <a href="#features">Features</a>
+    <a href="#pictures">Pictures</a>
+    <a href="#start">Play</a>
+  </nav>
+  <a class="btn btn-ghost btn-sm nav-gh" href="https://github.com/PQMarine/UnderworldRevisited">
+    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+    GitHub
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero hero-uw2">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="img/uw2-hall.jpg" alt="">
+    </div>
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="eyebrow reveal">Ultima Underworld II &middot; In beta &middot; Windows &amp; Linux</p>
+      <h1 class="hero-title reveal">
+        <span class="line">Labyrinth</span>
+        <span class="line ember-text">of Worlds</span>
+      </h1>
+      <p class="hero-sub reveal">
+        Ultima Underworld II (1993), in the same Underworld Revisited as the first game and read
+        straight from your own copy. Lord British's castle under the blackrock dome, and the worlds
+        beyond it.
+      </p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="https://github.com/PQMarine/UnderworldRevisited/releases/latest">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
+          Download <span class="version" data-version>0.25.0</span>
+        </a>
+        <a class="btn btn-ghost" href="#state">What the beta is</a>
+      </div>
+      <p class="hero-note reveal">Needs <strong>Ultima Underworld II</strong> from <a href="https://www.ea.com/games/ultima/ultima-underworld-2-labyrinth-of-worlds" target="_blank" rel="noopener">the EA app</a>, <a href="https://www.gog.com/en/game/ultima_underworld_2" target="_blank" rel="noopener">GOG.com</a> or <a href="https://store.steampowered.com/app/3067590/" target="_blank" rel="noopener">Steam</a>, sold on its own. No game data included.</p>
+    </div>
+    <a class="scroll-cue" href="#state" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <!-- STATE -->
+  <section class="section uw2" id="state">
+    <div class="uw2-inner reveal">
+      <div>
+        <p class="kicker">In beta</p>
+        <h2>Checked against 1993</h2>
+        <p>Every rule of the second game is built, with its music, its sound and its cutscenes. The
+          whole game has been played through against the original, and its classic interface was
+          checked against the original area by area. Save games go both ways between the two.</p>
+        <p>A beta, because it has been played by few so far. Where it differs from the original, a
+          report helps most; what stays different on purpose is in the
+          <a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/Docs/DEVIATIONS.md">list of deviations</a>.</p>
+        <a class="btn btn-ghost" href="https://github.com/PQMarine/UnderworldRevisited/issues">Report a difference</a>
+      </div>
+      <figure class="uw2-show">
+        <div class="uw2-stage" id="uw2Stage">
+          <img src="img/uw2-classic.jpg" alt="Lord British's throne room in the classic UW2 screen" class="on" data-cap="Lord British's throne room in the second game's own screen, as in 1993">
+          <img src="img/uw2-modern.jpg" alt="The throne room in the modern scheme" data-cap="The same room in the modern scheme, with the first game's panels drawn from the second game's art" loading="lazy">
+          <img src="img/uw2-hall.jpg" alt="A hall of the castle in Remastered mode" data-cap="A hall of the castle in Remastered mode, the tables and chairs as the original's 3D models" loading="lazy">
+          <img src="img/uw2-nell.jpg" alt="A conversation with Nell" data-cap="A conversation with Nell, with the original's portraits" loading="lazy">
+          <span class="uw2-badge" aria-hidden="true">II</span>
+        </div>
+        <figcaption>
+          <span id="uw2Cap">Lord British's throne room in the second game's own screen, as in 1993</span>
+          <span class="uw2-dots" id="uw2Dots" role="tablist" aria-label="UW2 pictures"></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="section-head reveal">
+      <p class="kicker">Built against the original</p>
+      <h2>The second game, its own way</h2>
+      <p>The rules are read from the original's code and checked against the game. What the second
+        game does differently from the first, it does here too.</p>
+    </div>
+
+    <div class="bento">
+      <article class="card card-wide card-img reveal" data-tilt>
+        <img src="img/uw2-classic.jpg" alt="" loading="lazy">
+        <div class="card-body">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></div>
+          <h3>Castle and worlds</h3>
+          <p>Lord British's castle and the worlds reached through the blackrock gem, with their
+            creatures, their schedules and the world's events, their traps and triggers.</p>
+        </div>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v10H8l-4 4z"/></svg></div>
+        <h3>Conversations</h3>
+        <p>Running the original conversation bytecode, with all they change in the world, and
+          trading.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M14.5 4l5.5 5.5-9 9H5.5V13z"/><path d="M4 20l3-3"/></svg></div>
+        <h3>Magic and weapons</h3>
+        <p>The second game's spells and the special weapons, water, lava and ice.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 4v16M15 4v16"/></svg></div>
+        <h3>Jail and the Pits</h3>
+        <p>The player's death and the jail, the deaths of the story, and the Pits of Carnage.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h3>Music and cutscenes</h3>
+        <p>The music chosen by the game's own rules, on AdLib, General MIDI, the MT-32 or recordings
+          of your own, and the original's cutscenes.</p>
+      </article>
+
+      <article class="card card-wide card-img reveal" data-tilt>
+        <img src="img/uw2-modern.jpg" alt="" loading="lazy">
+        <div class="card-body">
+          <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 18v3M16 18v3"/></svg></div>
+          <h3>Both interfaces</h3>
+          <p>The second game's own classic screen, inventory, panels, map and options - or the first
+            game's modern interface drawn from its art, with the presets Modern, Classic Modular and
+            Classic Wide and the layout editor. The gamepad works in both.</p>
+        </div>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></div>
+        <h3>The same graphics</h3>
+        <p>Palette, Palette colours and Remastered, the Palette effects, xBR and the world at the
+          original's resolution, as in the first game.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M9 10h6M9 14h6"/></svg></div>
+        <h3>The help window</h3>
+        <p>Stats with the hidden values and the worn magic, a live map, notes kept with the save,
+          the spells your character knows, and the teachers who train its skills.</p>
+      </article>
+
+      <article class="card reveal" data-tilt>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Bugs of 1993</h3>
+        <p>The Guardian's speech on level 17 and five other floor triggers that never fire in the
+          original come with "Fix bugs of the original" - on by default, and it can be switched off.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PICTURES -->
+  <section class="section" id="pictures">
+    <div class="section-head reveal">
+      <p class="kicker">Beyond the dome</p>
+      <h2>Pictures</h2>
+    </div>
+    <div class="gallery" id="galleryGrid">
+      <a href="img/uw2-classic.jpg" class="reveal" data-cap="Lord British's throne room in the second game's own screen."><img src="img/uw2-classic.jpg" alt="The classic UW2 screen" loading="lazy"></a>
+      <a href="img/uw2-modern.jpg" class="reveal" data-cap="The same room in the modern scheme: the rune bag with Levitate prepared, the map at the top right, the sack, the pack and the backpack, the character panel with the skills."><img src="img/uw2-modern.jpg" alt="The modern UW2 interface" loading="lazy"></a>
+      <a href="img/uw2-hall.jpg" class="reveal" data-cap="A hall of the castle in Remastered mode, the tables and chairs as the original's 3D models."><img src="img/uw2-hall.jpg" alt="Remastered mode in the castle" loading="lazy"></a>
+      <a href="img/uw2-nell.jpg" class="reveal" data-cap="A conversation with Nell, with the original's portraits."><img src="img/uw2-nell.jpg" alt="A conversation with Nell" loading="lazy"></a>
+      <a href="img/uw2-noclip-castle.jpg" class="reveal" data-cap="Lord British's castle from above in the debug view, its triggers and traps labelled."><img src="img/uw2-noclip-castle.jpg" alt="The castle from above in the debug view" loading="lazy"></a>
+    </div>
+  </section>
+
+  <!-- START -->
+  <section class="section" id="start">
+    <div class="section-head reveal">
+      <p class="kicker">Three steps</p>
+      <h2>Into the labyrinth</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="step-n">1</span><h3>Get the original</h3><p>Get <b>Ultima Underworld II</b> from <a href="https://www.ea.com/games/ultima/ultima-underworld-2-labyrinth-of-worlds" target="_blank" rel="noopener">the EA app</a>, <a href="https://www.gog.com/en/game/ultima_underworld_2" target="_blank" rel="noopener">GOG.com</a> or <a href="https://store.steampowered.com/app/3067590/" target="_blank" rel="noopener">Steam</a> and install it. It is sold on its own.</p></div>
+      <div class="step reveal"><span class="step-n">2</span><h3>Download</h3><p>The same release as for the first game, for Windows (10+, 64-bit) or Linux (x86-64), unpacked into a folder of its own.</p></div>
+      <div class="step reveal"><span class="step-n">3</span><h3>Choose the game</h3><p>Start <code>UR.exe</code> or <code>UR.x86_64</code>. In the main menu, <b>Game</b> in the menu bar lists every installation it found and switches between the two games. Saves go to the installation's <code>UNDEROM2</code>, shared with the original.</p></div>
+    </div>
+    <div class="start-cta reveal">
+      <a class="btn btn-primary btn-lg" href="https://github.com/PQMarine/UnderworldRevisited/releases/latest">Download <span data-version>0.25.0</span></a>
+      <p class="muted">Starting it from Steam or GOG Galaxy: see <a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/Docs/INSTALLING.md">Installing</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand"><img src="img/ur-icon.svg" alt="" width="40" height="40"><span>Underworld Revisited</span></div>
+  <p>Free, non-commercial fan project under the <a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/LICENSE">MIT License</a>. Not sold, no donations accepted.</p>
+  <p class="muted">Not affiliated with or endorsed by the owners of the Ultima Underworld rights. Ultima and Ultima Underworld are trademarks of their respective owners. The screenshots show the original games' artwork, which belongs to its rights owners and is not covered by this project's licence.</p>
+  <p class="footer-links"><a href="index.html">Ultima Underworld I</a><a href="https://github.com/PQMarine/UnderworldRevisited">Source</a><a href="https://github.com/PQMarine/UnderworldRevisited/releases">Releases</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/ROADMAP.md">Roadmap</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/Docs/CONTROLS.md">Controls</a><a href="https://github.com/PQMarine/UnderworldRevisited/blob/main/THIRD_PARTY_NOTICES.md">Notices</a></p>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-prev" aria-label="Previous">&#8249;</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-next" aria-label="Next">&#8250;</button>
+</div>
+
+<script src="main.js?v=20261126a"></script>
+</body>
+</html>
